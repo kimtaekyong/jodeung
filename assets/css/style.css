@@ -13,4 +13,175 @@
 /* @param : $line ( 기본값 1 줄 ) */
 body {
   font-family: "Poppins", Helvetica, sans-serif;
-}/*# sourceMappingURL=style.css.map */
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 상단 네비
+ * --------------------------------------------------------------------
+ */
+header {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+header .logo-area {
+  padding-right: 11.09375%;
+}
+header .login-area {
+  color: #666666;
+  font-size: 14px;
+  padding-left: 10.46875%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .login-area a {
+  color: #666666;
+  font-size: 14px;
+  font-weight: 600;
+}
+header .line {
+  margin: 0 5px;
+}
+header .big-menu {
+  padding: 0 1.5625%;
+  text-align: center;
+}
+header .big-menu a {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: #303030;
+  position: relative;
+  padding-bottom: 6px;
+  transition: all 0.3s;
+}
+header .big-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 5px;
+  width: 0%;
+  background-color: #18864A;
+  transition: all 0.3s;
+}
+header .big-menu a:hover {
+  color: #18864A;
+  transition: all 0.3s;
+}
+header .big-menu a:hover::after {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 메인 상단
+ * --------------------------------------------------------------------
+ */
+.top-main {
+  margin-top: 44px;
+}
+.top-main .title1 {
+  color: #303030;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+.top-main .title2 {
+  color: #000;
+  font-family: "Gowun Batang";
+  font-size: 43px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+  margin-top: 29px;
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 미디어쿼리
+ * --------------------------------------------------------------------
+ */
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1160px;
+  }
+}
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1280px;
+  }
+  .container2 {
+    max-width: 1480px;
+  }
+}
+.container {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background: #ffffff;
+}
+
+.container2 {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background: #ffffff;
+}
+
+/* xxl */
+@media (max-width: 1281px) {
+  header .logo-area {
+    padding-right: 9%;
+  }
+  header .login-area {
+    padding-left: 8%;
+  }
+}
+/* xl */
+@media (max-width: 1199.98px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  header .big-menu-area {
+    display: none;
+  }
+}
+/* lg */
+/* md */
+/* sm */
+/* iphone SE *//*# sourceMappingURL=style.css.map */

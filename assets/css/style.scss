@@ -1,5 +1,222 @@
 @use "common" as c;
 
 body {
-    font-family: c.$fonts;
+  font-family: c.$fonts;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 상단 네비
+ * --------------------------------------------------------------------
+ */
+header {
+  padding-top: 56px;
+  padding-bottom: 56px;
+
+  .logo-area {
+    padding-right: 11.09375%;
+  }
+
+  .login-area {
+    color: c.$sec_color;
+    font-size: 14px;
+    padding-left: 10.46875%;
+    @include c.flex-center;
+
+    a {
+      color: c.$sec_color;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .line {
+    margin: 0 5px;
+  }
+  .big-menu {
+    padding: 0 1.5625%;
+    text-align: center;
+
+    a {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: c.$df_color;
+      position: relative;
+      padding-bottom: 6px;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 5px;
+        width: 0%;
+        background-color: c.$ST_color;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        color: c.$ST_color;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+
+        &::after {
+          width: 100%;
+          -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 메인 상단
+ * --------------------------------------------------------------------
+ */
+.top-main {
+    margin-top: 44px;
+
+  .title1 {
+    color: c.$df_color;
+    font-family: c.$title1;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+  }
+  .title2 {
+    color: c.$black;
+    font-family: c.$title2;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+    margin-top: 29px;
+  }
+}
+/*
+ * --------------------------------------------------------------------
+ * 미디어쿼리
+ * --------------------------------------------------------------------
+ */
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+  }
+}
+
+@media (min-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1160px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1280px;
+  }
+  .container2 {
+    max-width: 1480px;
+  }
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background: #ffffff;
+}
+.container2 {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background: #ffffff;
+}
+
+/* xxl */
+@media (max-width: 1399.98px) {
+}
+
+@media (max-width: 1281px) {
+  header {
+    .logo-area {
+      padding-right: 9%;
+    }
+    .login-area {
+      padding-left: 8%;
+    }
+  }
+}
+
+/* xl */
+@media (max-width: 1199.98px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .big-menu-area {
+      display: none;
+    }
+  }
+}
+
+/* lg */
+@media (max-width: 991.98px) {
+}
+
+/* md */
+@media (max-width: 769.98px) {
+}
+
+/* sm */
+@media (max-width: 575.98px) {
+}
+
+/* iphone SE */
+@media (max-width: 375.98px) {
 }

@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+#app {
+  width: 100%;
+}
+
 /*
  * --------------------------------------------------------------------
  * 상단 네비
@@ -69,11 +73,11 @@ header .big-menu a::after {
   margin: auto;
   height: 5px;
   width: 0%;
-  background-color: #18864A;
+  background-color: #18864a;
   transition: all 0.3s;
 }
 header .big-menu a:hover {
-  color: #18864A;
+  color: #18864a;
   transition: all 0.3s;
 }
 header .big-menu a:hover::after {
@@ -109,6 +113,70 @@ header .big-menu a:hover::after {
   margin-top: 29px;
 }
 
+/*
+ * --------------------------------------------------------------------
+ * 부고장 검색
+ * --------------------------------------------------------------------
+ */
+.obituary-search {
+  margin-top: 100px;
+}
+.obituary-search .title1 {
+  color: #303030;
+  text-align: center;
+  font-family: Gowun Batang;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 70px;
+}
+.obituary-search .search-area {
+  margin-top: 25px;
+}
+.obituary-search .search-area .search {
+  width: 700px;
+  height: 49px;
+  padding: 0 20px;
+  position: relative;
+  display: inline-block;
+}
+.obituary-search .search-area .search .icon-1 {
+  width: 18px;
+}
+.obituary-search .search-area .search .icon-2 {
+  width: 30px;
+}
+.obituary-search .search-area .search .input {
+  padding: 0 6px;
+}
+.obituary-search .search-area .search .input input {
+  color: #AAAAAA;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.obituary-search .search-area .search::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #303030;
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 부고장 안내
+ * --------------------------------------------------------------------
+ */
+/*
+ * --------------------------------------------------------------------
+ * 메인 하단 컨텐츠
+ * --------------------------------------------------------------------
+ */
 /*
  * --------------------------------------------------------------------
  * 미디어쿼리
@@ -159,6 +227,11 @@ header .big-menu a:hover::after {
 }
 
 /* xxl */
+@media (max-width: 1399.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
 @media (max-width: 1281px) {
   header .logo-area {
     padding-right: 9%;
@@ -183,5 +256,20 @@ header .big-menu a:hover::after {
 }
 /* lg */
 /* md */
+@media (max-width: 769.98px) {
+  .obituary-search .search-area .search {
+    width: 100%;
+  }
+  .obituary-search .search-area .search .input input {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .obituary-search .search-area .search .icon-1 {
+    width: 14px;
+  }
+  .obituary-search .search-area .search .icon-2 {
+    width: 24px;
+  }
+}
 /* sm */
 /* iphone SE *//*# sourceMappingURL=style.css.map */

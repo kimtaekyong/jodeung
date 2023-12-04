@@ -6,10 +6,12 @@
 $fonts: "Poppins", Helvetica, sans-serif;
 $title1: "Roboto";
 $title2: "Gowun Batang";
+$input: "Pretendard";
 
-$ST_color: #18864A; // 강조
+$ST_color: #18864a; // 강조
 $df_color: #303030; // 기본
 $sec_color: #666666; // 세컨
+$input-place: #AAAAAA;
 $primary: #ab99ca;
 $dark-grey: #999;
 $white: #fff;
@@ -23,60 +25,60 @@ $spacing: 2rem;
  * --------------------------------------------------------------------
  */
 @mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
 /* text-ellipsis (말줄임..)  */
 /* @param : $line ( 기본값 1 줄 ) */
 @mixin ellipsis($line: 1) {
-  @if ($line == 1) {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  } @else {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: $line;
-  }
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
 }
 
 @mixin inline-block-box($vertical-align: top) {
-  display: inline-block;
-  vertical-align: $vertical-align;
+    display: inline-block;
+    vertical-align: $vertical-align;
 }
 
 // 대체 텍스트
 @mixin blind {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  white-space: nowrap;
-  clip: rect(0, 0, 0, 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
 }
 
 // 줄바꿈 속성
 @mixin wordWrap {
-  word-break: break-word;
-  word-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
 }
 
 @mixin box {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
 }

@@ -1,11 +1,15 @@
 @use "common" as c;
 
 body {
-  font-family: c.$fonts;
+    font-family: c.$fonts;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+}
+
+#app {
+    width: 100%;
 }
 
 /*
@@ -14,69 +18,69 @@ a {
  * --------------------------------------------------------------------
  */
 header {
-  padding-top: 56px;
-  padding-bottom: 56px;
+    padding-top: 56px;
+    padding-bottom: 56px;
 
-  .logo-area {
-    padding-right: 11.09375%;
-  }
-
-  .login-area {
-    color: c.$sec_color;
-    font-size: 14px;
-    padding-left: 10.46875%;
-    @include c.flex-center;
-
-    a {
-      color: c.$sec_color;
-      font-size: 14px;
-      font-weight: 600;
+    .logo-area {
+        padding-right: 11.09375%;
     }
-  }
-  .line {
-    margin: 0 5px;
-  }
-  .big-menu {
-    padding: 0 1.5625%;
-    text-align: center;
 
-    a {
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-      color: c.$df_color;
-      position: relative;
-      padding-bottom: 6px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
+    .login-area {
+        color: c.$sec_color;
+        font-size: 14px;
+        padding-left: 10.46875%;
+        @include c.flex-center;
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        height: 5px;
-        width: 0%;
-        background-color: c.$ST_color;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-      }
-
-      &:hover {
-        color: c.$ST_color;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-
-        &::after {
-          width: 100%;
-          -webkit-transition: all 0.3s;
-          transition: all 0.3s;
+        a {
+            color: c.$sec_color;
+            font-size: 14px;
+            font-weight: 600;
         }
-      }
     }
-  }
+    .line {
+        margin: 0 5px;
+    }
+    .big-menu {
+        padding: 0 1.5625%;
+        text-align: center;
+
+        a {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: c.$df_color;
+            position: relative;
+            padding-bottom: 6px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                height: 5px;
+                width: 0%;
+                background-color: c.$ST_color;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                color: c.$ST_color;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+
+                &::after {
+                    width: 100%;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -87,122 +91,193 @@ header {
 .top-main {
     margin-top: 44px;
 
-  .title1 {
-    color: c.$df_color;
-    font-family: c.$title1;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-  }
-  .title2 {
-    color: c.$black;
-    font-family: c.$title2;
-    font-size: 43px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 70px;
-    margin-top: 29px;
-  }
+    .title1 {
+        color: c.$df_color;
+        font-family: c.$title1;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+    }
+    .title2 {
+        color: c.$black;
+        font-family: c.$title2;
+        font-size: 43px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 70px;
+        margin-top: 29px;
+    }
 }
+/*
+ * --------------------------------------------------------------------
+ * 부고장 검색
+ * --------------------------------------------------------------------
+ */
+.obituary-search {
+    margin-top: 100px;
+
+    .title1 {
+        color: c.$df_color;
+        text-align: center;
+        font-family: Gowun Batang;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 70px;
+    }
+
+    .search-area {
+        margin-top: 25px;
+
+        .search {
+            width: 700px;
+            height: 49px;
+            padding: 0 20px;
+            position: relative;
+            display: inline-block;
+
+            .icon-1 {
+                width: 18px;
+            }
+            .icon-2 {
+                width: 30px;
+            }
+
+            .input {
+                padding: 0 6px;
+
+                input {
+                    color: c.$input-place;
+                    font-family: c.$input;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 4px;
+                width: 100%;
+                background-color: c.$df_color;
+            }
+        }
+    }
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 부고장 안내
+ * --------------------------------------------------------------------
+ */
+.obituary-guide {
+}
+
+/*
+ * --------------------------------------------------------------------
+ * 메인 하단 컨텐츠
+ * --------------------------------------------------------------------
+ */
+.main-bottom {
+}
+
 /*
  * --------------------------------------------------------------------
  * 미디어쿼리
  * --------------------------------------------------------------------
  */
 @media (min-width: 576px) {
-  .container-sm,
-  .container {
-    max-width: 100%;
-  }
+    .container-sm,
+    .container {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 768px) {
-  .container-md,
-  .container-sm,
-  .container {
-  }
 }
 
 @media (min-width: 992px) {
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
-  }
 }
 
 @media (min-width: 1200px) {
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
-    max-width: 1160px;
-  }
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1160px;
+    }
 }
 
 @media (min-width: 1400px) {
-  .container-xxl,
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
-    max-width: 1280px;
-  }
-  .container2 {
-    max-width: 1480px;
-  }
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1280px;
+    }
+    .container2 {
+        max-width: 1480px;
+    }
 }
 
 .container {
-  position: relative;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  background: #ffffff;
+    position: relative;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    background: #ffffff;
 }
 .container2 {
-  position: relative;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  background: #ffffff;
+    position: relative;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    background: #ffffff;
 }
 
 /* xxl */
 @media (max-width: 1399.98px) {
+    .container {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 1281px) {
-  header {
-    .logo-area {
-      padding-right: 9%;
+    header {
+        .logo-area {
+            padding-right: 9%;
+        }
+        .login-area {
+            padding-left: 8%;
+        }
     }
-    .login-area {
-      padding-left: 8%;
-    }
-  }
 }
 
 /* xl */
 @media (max-width: 1199.98px) {
-  .container {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    .big-menu-area {
-      display: none;
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
     }
-  }
+
+    header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        .big-menu-area {
+            display: none;
+        }
+    }
 }
 
 /* lg */
@@ -211,6 +286,22 @@ header {
 
 /* md */
 @media (max-width: 769.98px) {
+    .obituary-search .search-area .search {
+        width: 100%;
+
+        .input input {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .icon-1 {
+            width: 14px;
+        }
+
+        .icon-2 {
+            width: 24px;
+        }
+    }
 }
 
 /* sm */

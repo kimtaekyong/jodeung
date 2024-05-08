@@ -1,4 +1,5 @@
 @use "common" as c;
+@use "reset" as r;
 
 body {
     font-family: c.$fonts;
@@ -18,65 +19,68 @@ a {
  * --------------------------------------------------------------------
  */
 header {
-    padding-top: 56px;
-    padding-bottom: 56px;
-
-    .logo-area {
-        padding-right: 11.09375%;
-    }
-
-    .login-area {
-        color: c.$sec_color;
-        font-size: 14px;
-        padding-left: 10.46875%;
-        @include c.flex-center;
-
-        a {
-            color: c.$sec_color;
-            font-size: 14px;
-            font-weight: 600;
+    .container {
+        padding: 0 24px;
+        height: 80px;
+        position: relative;
+        @include c.inner_layout;
+        @include c.flex-between;
+        .logo {
         }
-    }
-    .line {
-        margin: 0 5px;
-    }
-    .big-menu {
-        padding: 0 1.5625%;
-        text-align: center;
-
-        a {
-            font-size: 18px;
-            font-weight: 600;
-            text-align: center;
-            color: c.$df_color;
+        .gnb {
             position: relative;
-            padding-bottom: 6px;
-            -webkit-transition: all 0.3s;
-            transition: all 0.3s;
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                height: 5px;
-                width: 0%;
-                background-color: c.$ST_color;
-                -webkit-transition: all 0.3s;
-                transition: all 0.3s;
+            ul {
+                @include c.flex;
+                justify-content: center;
+                column-gap: 48px;
+                li {
+                    text-align: center;
+                    a {
+                        font-size: 15px;
+                        font-weight: 600;
+                        display: block;
+                        position: relative;
+                        &::after {
+                            position: absolute;
+                            width: 0%;
+                            height: 2px;
+                            content: "";
+                            background-color: c.$ST_color;
+                            left: 50%;
+                            bottom: -8px;
+                            transform: translateX(-50%);
+                        }
+                        &:hover {
+                            color: c.$ST_color;
+                            &::after {
+                                width: 100%;
+                                transition: all 0.25s;
+                            }
+                        }
+                    }
+                }
             }
-
-            &:hover {
-                color: c.$ST_color;
-                -webkit-transition: all 0.3s;
-                transition: all 0.3s;
-
-                &::after {
-                    width: 100%;
-                    -webkit-transition: all 0.3s;
-                    transition: all 0.3s;
+        }
+        .login {
+            ul {
+                @include c.flex;
+                column-gap: 12px;
+                li {
+                    font-size: 15px;
+                    font-weight: 600;
+                    position: relative;
+                    &:first-child {
+                        &::after {
+                            content: "";
+                            width: 2px;
+                            height: 70%;
+                            background-color: c.$sec_color;
+                            display: block;
+                            position: absolute;
+                            right: -7px;
+                            top: 3px;
+                        }
+                    }
                 }
             }
         }
@@ -88,8 +92,41 @@ header {
  * 메인 상단
  * --------------------------------------------------------------------
  */
-.top-main {
-    margin-top: 44px;
+.visual_slide {
+    .container {
+        @include c.inner_layout;
+        padding: 0 24px;
+        .title__container {
+            position: relative;
+            top: 80px;
+            z-index: 100;
+        }
+    }
+    .swiper_slider {
+        width: 100%;
+        max-width: 1480px;
+        margin: 0 auto;
+        background-color: #000;
+        position: relative;
+        top: -60px;
+        img {
+            opacity: 0.85;
+        }
+        .swiper-pagination {
+            bottom: 24px;
+        }
+        .swiper-pagination-bullet {
+            width: 50px;
+            height: 5px;
+            background: transparent;
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 0;
+        }
+        .swiper-pagination-bullet-active {
+            width: 50px;
+            background: #fff;
+        }
+    }
 
     .title1 {
         color: c.$df_color;
@@ -100,15 +137,18 @@ header {
         line-height: normal;
         letter-spacing: 2.4px;
         text-transform: uppercase;
+        margin-bottom: 42px;
     }
-    .title2 {
-        color: c.$black;
+    .title2.title {
+        color: c.$df_color;
+    }
+    .title {
+        color: #fff;
         font-family: c.$title2;
-        font-size: 43px;
+        font-size: 42px;
         font-style: normal;
         font-weight: 400;
         line-height: 70px;
-        margin-top: 29px;
     }
 }
 /*
@@ -117,75 +157,290 @@ header {
  * --------------------------------------------------------------------
  */
 .obituary-search {
-    margin-top: 100px;
+    @include c.inner_layout;
+    .container {
+        .title1 {
+            color: c.$df_color;
+            text-align: center;
+            font-family: "GowunBatang";
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 70px;
+        }
 
-    .title1 {
-        color: c.$df_color;
-        text-align: center;
-        font-family: Gowun Batang;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 70px;
-    }
-
-    .search-area {
-        margin-top: 25px;
-
-        .search {
-            width: 700px;
-            height: 49px;
-            padding: 0 20px;
-            position: relative;
-            display: inline-block;
-
-            .icon-1 {
-                width: 18px;
-            }
-            .icon-2 {
-                width: 30px;
-            }
-
-            .input {
-                padding: 0 6px;
-
-                input {
-                    color: c.$input-place;
-                    font-family: c.$input;
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: normal;
-                }
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 4px;
+        .search-area {
+            margin-top: 25px;
+            text-align: center;
+            .search {
                 width: 100%;
-                background-color: c.$df_color;
+                max-width: 700px;
+                height: 38px;
+                padding: 0 20px;
+                position: relative;
+                display: inline-block;
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .icon-1 {
+                    width: 18px;
+                }
+                .icon-2 {
+                    width: 24px;
+                }
+
+                .input {
+                    padding: 0 6px;
+                    input {
+                        color: c.$input-place;
+                        font-family: c.$input;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+                        border: none;
+                        width: 100%;
+                        min-width: 360px;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 100%;
+                    background-color: c.$df_color;
+                }
             }
         }
     }
 }
-
 /*
  * --------------------------------------------------------------------
  * 부고장 안내
  * --------------------------------------------------------------------
  */
 .obituary-guide {
+    margin: 100px 0;
+    background-color: #f2f4f5;
+    padding: 54px;
+    .container {
+        @include c.inner_layout;
+        @include c.flex-between;
+        background-color: #f2f4f5;
+        h4 {
+            font-size: 34px;
+            font-family: c.$title2;
+        }
+        .obituary-list {
+            ul {
+                display: flex;
+                column-gap: 78px;
+                li {
+                    button {
+                        @include c.flex-center;
+                        flex-direction: column;
+                        background: none;
+                        row-gap: 12px;
+                        cursor: pointer;
+                        .icon-box {
+                            svg {
+                                width: 38px;
+                                height: 38px;
+                            }
+                        }
+                        p {
+                            font-size: 15px;
+                            display: block;
+                            font-weight: bold;
+                            font-family: c.$title1;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-
 /*
  * --------------------------------------------------------------------
  * 메인 하단 컨텐츠
  * --------------------------------------------------------------------
  */
 .main-bottom {
+    margin-bottom: 100px;
+    .container {
+        @include c.inner_layout;
+        .contant_list {
+            display: flex;
+            column-gap: 20px;
+            h4 {
+                font-size: 32px;
+                font-family: c.$title2;
+                margin-bottom: 24px;
+                color: #000;
+            }
+            .bage {
+                background-color: c.$ST_color;
+                display: inline-block;
+                padding: 6px 14px;
+                border-radius: 32px;
+                color: #fff;
+                margin-bottom: 14px;
+            }
+            .board_contant {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                button {
+                    font-size: 15px;
+                    font-family: c.$title1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: none;
+                    border: none;
+                    i {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+            .online {
+                width: 33.333%;
+                background: url(/assets/imges/online_bg.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                padding: 72px 48px;
+                .contant {
+                    h4 {
+                        color: #fff;
+                    }
+                    p {
+                        color: #fff;
+                        margin-bottom: 32px;
+                        line-height: 23px;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    button {
+                        background: #fff;
+                        color: #000;
+                        border: none;
+                        padding: 18px 38px;
+                        border: none;
+                        border-radius: 32px;
+                        font-size: 16px;
+                        display: flex;
+                        column-gap: 16px;
+                        font-weight: bold;
+                        font-family: c.$title1;
+                        cursor: pointer;
+                        @include c.flex-center;
+                        i {
+                            @include c.flex-center;
+                        }
+                    }
+                }
+            }
+            .notice {
+                width: 33.333%;
+                background-color: #f2f4f5;
+                padding: 72px 48px;
+                h4 {
+                    margin-bottom: 0;
+                }
+                .board_list {
+                    ul {
+                        margin-top: 24px;
+                        li {
+                            border-top: 1px solid #dfe0e2;
+                            padding: 20px 0;
+                            line-height: 24px;
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+            .faq {
+                width: 33.333%;
+                background-color: #f2f4f5;
+                padding: 72px 48px;
+                h4 {
+                    margin-bottom: 0;
+                }
+                .faq_list {
+                    ul {
+                        margin-top: 24px;
+                        li {
+                            border-top: 1px solid #dfe0e2;
+                            padding: 20px 0;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+ * --------------------------------------------------------------------
+ * 푸터 컨텐츠
+ * --------------------------------------------------------------------
+ */
+footer {
+    min-height: 420px;
+    background-color: #2c2c2c;
+    padding-top: 80px;
+    .container {
+        @include c.inner_layout;
+        background: none;
+        display: flex;
+        justify-content: space-between;
+        .footer_flex {
+            display: flex;
+            column-gap: 42px;
+            .footer__copylight {
+                span {
+                    font-weight: bold;
+                    font-size: 18px;
+                    margin-bottom: 12px;
+                    display: block;
+                }
+                .info_wrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    max-width: 500px;
+                    column-gap: 8px;
+                    padding: 12px 0;
+                    li {
+                        line-height: 24px;
+                    }
+                }
+                .cs_wrap {
+                    display: flex;
+                    column-gap: 6px;
+                    margin-bottom: 12px;
+                    li {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .footer_info {
+            ul {
+                display: flex;
+                column-gap: 12px;
+            }
+        }
+    }
 }
 
 /*
@@ -207,27 +462,9 @@ header {
 }
 
 @media (min-width: 1200px) {
-    .container-xl,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container {
-        max-width: 1160px;
-    }
 }
 
 @media (min-width: 1400px) {
-    .container-xxl,
-    .container-xl,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container {
-        max-width: 1280px;
-    }
-    .container2 {
-        max-width: 1480px;
-    }
 }
 
 .container {
@@ -254,29 +491,15 @@ header {
 
 @media (max-width: 1281px) {
     header {
-        .logo-area {
-            padding-right: 9%;
-        }
-        .login-area {
-            padding-left: 8%;
-        }
     }
 }
 
 /* xl */
 @media (max-width: 1199.98px) {
     .container {
-        padding-left: 24px;
-        padding-right: 24px;
     }
 
     header {
-        padding-top: 20px;
-        padding-bottom: 20px;
-
-        .big-menu-area {
-            display: none;
-        }
     }
 }
 

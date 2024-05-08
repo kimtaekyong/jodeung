@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+fieldset,
+legend,
+figure,
+menu,
+tr,
+td,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body,
+div,
+table,
+tr,
+td {
+    font-size: 16px;
+    color: #7d7d7d;
+    font-family: "Pretendard", "Noto Sans KR";
+}
+
+input,
+textarea,
+select,
+button {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    color: #222;
+    font-size: 21px;
+    outline: 0;
+    vertical-align: middle;
+}
+
+caption {
+    text-indent: -999999px;
+    display: none;
+}
+legend {
+    text-indent: -999999px;
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+table,
+th,
+td {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.cell {
+    float: left;
+}

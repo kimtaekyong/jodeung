@@ -3,15 +3,18 @@
  * 기본
  * --------------------------------------------------------------------
  */
-$fonts: "Poppins", Helvetica, sans-serif;
-$title1: "Roboto";
-$title2: "Gowun Batang";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://webfontworld.github.io/yangheeryu/GowunBatang.css");
+
+$fonts: "Pretendard", Helvetica, sans-serif;
+$title1: "Pretendard";
+$title2: "GowunBatang";
 $input: "Pretendard";
 
 $ST_color: #18864a; // 강조
 $df_color: #303030; // 기본
 $sec_color: #666666; // 세컨
-$input-place: #AAAAAA;
+$input-place: #aaaaaa;
 $primary: #ab99ca;
 $dark-grey: #999;
 $white: #fff;
@@ -24,10 +27,27 @@ $spacing: 2rem;
  * mixin
  * --------------------------------------------------------------------
  */
+@mixin inner_layout {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
 @mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @mixin border-radius($radius) {

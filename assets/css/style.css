@@ -451,7 +451,7 @@ header .login ul li:first-child::after {
 }
 .main-bottom .container .contant_list .online {
   width: 33.333%;
-  background: url(assets/imges/online_bg.png);
+  background-image: url(../../assets/imges/online_bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

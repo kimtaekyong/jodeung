@@ -246,7 +246,7 @@ header .login ul li:first-child::after {
   top: -60px;
 }
 .visual_slide .swiper_slider img {
-  opacity: 0.85;
+  width: 100%;
 }
 .visual_slide .swiper_slider .swiper-pagination {
   bottom: 24px;
@@ -713,9 +713,6 @@ footer .container .footer_info ul li .bold {
     position: relative;
     top: -60px;
   }
-  .visual_slide .swiper_slider img {
-    opacity: 0.85;
-  }
   .visual_slide .swiper_slider .swiper-pagination {
     bottom: 24px;
   }
@@ -1054,8 +1051,8 @@ footer .container .footer_info ul li .bold {
     top: -50px;
   }
   .visual_slide .swiper_slider img {
-    opacity: 0.85;
-    height: 320px;
+    width: 100%;
+    min-height: 320px;
   }
   .visual_slide .swiper_slider .swiper-pagination-bullet {
     width: 34px;
@@ -1110,7 +1107,6 @@ footer .container .footer_info ul li .bold {
     top: -50px;
   }
   .visual_slide .swiper_slider img {
-    opacity: 0.85;
     height: 320px;
   }
   .visual_slide .swiper_slider .swiper-pagination {
@@ -1164,7 +1160,6 @@ footer .container .footer_info ul li .bold {
     top: -50px;
   }
   .visual_slide .swiper_slider img {
-    opacity: 0.85;
     height: 320px;
   }
   .visual_slide .swiper_slider .swiper-pagination-bullet {
@@ -1257,6 +1252,7 @@ footer .container .footer_info ul li .bold {
     border-radius: 32px;
     color: #fff;
     margin-bottom: 14px;
+    font-size: 14px;
   }
   .main-bottom .container .contant_list .board_contant {
     display: flex;

@@ -118,7 +118,7 @@ header {
         position: relative;
         top: -60px;
         img {
-            opacity: 0.85;
+            width: 100%;
         }
         .swiper-pagination {
             bottom: 24px;
@@ -599,7 +599,6 @@ footer {
             position: relative;
             top: -60px;
             img {
-                opacity: 0.85;
             }
             .swiper-pagination {
                 bottom: 24px;
@@ -948,8 +947,8 @@ footer {
         .swiper_slider {
             top: -50px;
             img {
-                opacity: 0.85;
-                height: 320px;
+                width: 100%;
+                min-height: 320px;
             }
             .swiper-pagination-bullet {
                 width: 34px;
@@ -1006,7 +1005,6 @@ footer {
             position: relative;
             top: -50px;
             img {
-                opacity: 0.85;
                 height: 320px;
             }
             .swiper-pagination {
@@ -1064,7 +1062,6 @@ footer {
         .swiper_slider {
             top: -50px;
             img {
-                opacity: 0.85;
                 height: 320px;
             }
             .swiper-pagination-bullet {
@@ -1164,6 +1161,7 @@ footer {
                     border-radius: 32px;
                     color: #fff;
                     margin-bottom: 14px;
+                    font-size: 14px;
                 }
                 .board_contant {
                     display: flex;

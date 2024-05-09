@@ -4,8 +4,8 @@ var swiper = new Swiper(".mySwiper", {
     },
     centeredSlides: true,
     loop: true,
-    autoplay: {
-        delay: 2500,
-    },
+    // autoplay: {
+    //     delay: 2500,
+    // },
     speed: 1500,
 });

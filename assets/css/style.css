@@ -474,7 +474,7 @@ header .login ul li:first-child::after {
   padding: 18px 38px;
   border: none;
   border-radius: 32px;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   -moz-column-gap: 16px;
        column-gap: 16px;
@@ -930,7 +930,7 @@ footer .container .footer_info ul li .bold {
     padding: 18px 38px;
     border: none;
     border-radius: 32px;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     -moz-column-gap: 16px;
          column-gap: 16px;
@@ -1301,7 +1301,7 @@ footer .container .footer_info ul li .bold {
     padding: 18px 38px;
     border: none;
     border-radius: 32px;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     -moz-column-gap: 16px;
          column-gap: 16px;
@@ -1387,6 +1387,7 @@ footer .container .footer_info ul li .bold {
   }
   footer .container .footer_flex .footer__copylight .info_wrap li {
     line-height: 24px;
+    font-size: 14px;
   }
   footer .container .footer_flex .footer__copylight .cs_wrap {
     display: flex;
@@ -1399,6 +1400,7 @@ footer .container .footer_info ul li .bold {
     color: #cecece;
     position: relative;
     line-height: 24px;
+    font-size: 14px;
   }
   footer .container .footer_flex .footer__copylight .cs_wrap li::after {
     display: none;
@@ -1418,6 +1420,9 @@ footer .container .footer_info ul li .bold {
     -moz-column-gap: 18px;
          column-gap: 18px;
     margin-bottom: 24px;
+  }
+  footer .container .footer_info ul li {
+    font-size: 14px;
   }
   footer .container .footer_info ul li .bold {
     color: #cecece;

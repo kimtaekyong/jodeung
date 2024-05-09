@@ -432,10 +432,26 @@ footer {
                 }
                 .cs_wrap {
                     display: flex;
-                    column-gap: 6px;
+                    column-gap: 18px;
                     margin-bottom: 12px;
                     li {
-                        color: #fff;
+                        color: #cecece;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            width: 2px;
+                            height: 14px;
+                            background-color: #cecece;
+                            right: -10px;
+                            top: 2px;
+                        }
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -443,7 +459,25 @@ footer {
         .footer_info {
             ul {
                 display: flex;
-                column-gap: 12px;
+                column-gap: 18px;
+                li {
+                    &:first-child {
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            width: 2px;
+                            height: 14px;
+                            background-color: #cecece;
+                            right: -10px;
+                            top: 2px;
+                        }
+                    }
+                    .bold {
+                        color: #cecece;
+                    }
+                }
             }
         }
     }
@@ -607,9 +641,9 @@ footer {
         }
     }
     .obituary-guide {
-        margin: 60px 0;
+        margin: 32px 0;
         background-color: #fff;
-        padding: 54px;
+        padding: 24px;
         .container {
             @include c.inner_layout;
             @include c.flex-between;
@@ -621,6 +655,8 @@ footer {
                 font-family: c.$title2;
             }
             .obituary-list {
+                width: 100%;
+                max-width: 700px;
                 ul {
                     display: flex;
                     column-gap: 78px;
@@ -654,6 +690,54 @@ footer {
                                 white-space: nowrap;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+    .obituary-search {
+        @include c.inner_layout;
+        padding: 0 24px;
+        .container {
+            .title1 {
+                color: c.$df_color;
+                text-align: center;
+                font-family: "GowunBatang";
+                font-size: 34px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 70px;
+            }
+
+            .search-area {
+                margin-top: 25px;
+                text-align: center;
+                .search {
+                    width: 100%;
+                    max-width: 700px;
+                    height: 38px;
+                    padding: 0 20px;
+                    position: relative;
+                    display: inline-block;
+                    div {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .icon-1 {
+                        width: 18px;
+                    }
+                    .icon-2 {
+                        width: 24px;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 2px;
+                        width: 100%;
+                        background-color: c.$df_color;
                     }
                 }
             }
@@ -766,7 +850,8 @@ footer {
                 }
                 .faq {
                     width: 100%;
-                    background-color: #f2f4f5;
+                    background-color: #fff;
+                    border: 1px solid #eee;
                     padding: 48px;
                     h4 {
                         margin-bottom: 0;
@@ -894,53 +979,6 @@ footer {
             line-height: 36px;
         }
     }
-    .obituary-search {
-        @include c.inner_layout;
-        .container {
-            .title1 {
-                color: c.$df_color;
-                text-align: center;
-                font-family: "GowunBatang";
-                font-size: 34px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 70px;
-            }
-
-            .search-area {
-                margin-top: 25px;
-                text-align: center;
-                .search {
-                    width: 100%;
-                    max-width: 700px;
-                    height: 38px;
-                    padding: 0 20px;
-                    position: relative;
-                    display: inline-block;
-                    div {
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                    .icon-1 {
-                        width: 18px;
-                    }
-                    .icon-2 {
-                        width: 24px;
-                    }
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        height: 2px;
-                        width: 100%;
-                        background-color: c.$df_color;
-                    }
-                }
-            }
-        }
-    }
 }
 
 /* sm */
@@ -1059,7 +1097,6 @@ footer {
     }
     .obituary-search {
         @include c.inner_layout;
-        padding: 0 24px;
         .container {
             .title1 {
                 color: c.$df_color;
@@ -1200,11 +1237,12 @@ footer {
                     }
                     .board_list {
                         ul {
-                            margin-top: px;
+                            margin-top: 12px;
                             li {
                                 border-top: 1px solid #dfe0e2;
                                 padding: 16px 0;
                                 line-height: 24px;
+                                font-size: 14px;
                                 p {
                                     font-size: 14px;
                                 }
@@ -1227,6 +1265,7 @@ footer {
                                 border-top: 1px solid #dfe0e2;
                                 padding: 16px 0;
                                 line-height: 24px;
+                                font-size: 14px;
                             }
                         }
                     }
@@ -1236,7 +1275,7 @@ footer {
     }
     footer {
         background-color: #2c2c2c;
-        padding: 32px;
+        padding: 48px 32px;
         .container {
             .footer_logo {
                 margin-bottom: 24px;
@@ -1266,10 +1305,27 @@ footer {
                     .cs_wrap {
                         display: flex;
                         flex-wrap: wrap;
-                        row-gap: 6px;
+                        column-gap: 18px;
                         margin-bottom: 12px;
                         li {
-                            color: #fff;
+                            color: #cecece;
+                            position: relative;
+                            line-height: 24px;
+                            &::after {
+                                display: none;
+                            }
+                            &:first-child {
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    display: block;
+                                    width: 2px;
+                                    height: 14px;
+                                    background-color: #cecece;
+                                    right: -10px;
+                                    top: 5px;
+                                }
+                            }
                         }
                     }
                 }
@@ -1277,7 +1333,13 @@ footer {
             .footer_info {
                 ul {
                     display: flex;
-                    column-gap: 12px;
+                    column-gap: 18px;
+                    margin-bottom: 24px;
+                    li {
+                        .bold {
+                            color: #cecece;
+                        }
+                    }
                 }
             }
         }

@@ -568,17 +568,47 @@ footer .container .footer_flex .footer__copylight .info_wrap li {
 }
 footer .container .footer_flex .footer__copylight .cs_wrap {
   display: flex;
-  -moz-column-gap: 6px;
-       column-gap: 6px;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
   margin-bottom: 12px;
 }
 footer .container .footer_flex .footer__copylight .cs_wrap li {
-  color: #fff;
+  color: #cecece;
+  position: relative;
+}
+footer .container .footer_flex .footer__copylight .cs_wrap li::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 14px;
+  background-color: #cecece;
+  right: -10px;
+  top: 2px;
+}
+footer .container .footer_flex .footer__copylight .cs_wrap li:last-child::after {
+  display: none;
 }
 footer .container .footer_info ul {
   display: flex;
-  -moz-column-gap: 12px;
-       column-gap: 12px;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
+}
+footer .container .footer_info ul li:first-child {
+  position: relative;
+}
+footer .container .footer_info ul li:first-child::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 14px;
+  background-color: #cecece;
+  right: -10px;
+  top: 2px;
+}
+footer .container .footer_info ul li .bold {
+  color: #cecece;
 }
 
 /*
@@ -723,9 +753,9 @@ footer .container .footer_info ul {
     line-height: 54px;
   }
   .obituary-guide {
-    margin: 60px 0;
+    margin: 32px 0;
     background-color: #fff;
-    padding: 54px;
+    padding: 24px;
   }
   .obituary-guide .container {
     width: 100%;
@@ -741,6 +771,10 @@ footer .container .footer_info ul {
   .obituary-guide .container h4 {
     font-size: 34px;
     font-family: "GowunBatang";
+  }
+  .obituary-guide .container .obituary-list {
+    width: 100%;
+    max-width: 700px;
   }
   .obituary-guide .container .obituary-list ul {
     display: flex;
@@ -777,6 +811,52 @@ footer .container .footer_info ul {
     font-weight: bold;
     font-family: "Pretendard";
     white-space: nowrap;
+  }
+  .obituary-search {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .obituary-search .container .title1 {
+    color: #303030;
+    text-align: center;
+    font-family: "GowunBatang";
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+  }
+  .obituary-search .container .search-area {
+    margin-top: 25px;
+    text-align: center;
+  }
+  .obituary-search .container .search-area .search {
+    width: 100%;
+    max-width: 700px;
+    height: 38px;
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+  }
+  .obituary-search .container .search-area .search div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .obituary-search .container .search-area .search .icon-1 {
+    width: 18px;
+  }
+  .obituary-search .container .search-area .search .icon-2 {
+    width: 24px;
+  }
+  .obituary-search .container .search-area .search::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #303030;
   }
   .main-bottom {
     margin-bottom: 100px;
@@ -891,7 +971,8 @@ footer .container .footer_info ul {
   }
   .main-bottom .container .contant_list .faq {
     width: 100%;
-    background-color: #f2f4f5;
+    background-color: #fff;
+    border: 1px solid #eee;
     padding: 48px;
   }
   .main-bottom .container .contant_list .faq h4 {
@@ -1001,51 +1082,6 @@ footer .container .footer_info ul {
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
-  }
-  .obituary-search {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-  .obituary-search .container .title1 {
-    color: #303030;
-    text-align: center;
-    font-family: "GowunBatang";
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 70px;
-  }
-  .obituary-search .container .search-area {
-    margin-top: 25px;
-    text-align: center;
-  }
-  .obituary-search .container .search-area .search {
-    width: 100%;
-    max-width: 700px;
-    height: 38px;
-    padding: 0 20px;
-    position: relative;
-    display: inline-block;
-  }
-  .obituary-search .container .search-area .search div {
-    display: flex;
-    justify-content: space-between;
-  }
-  .obituary-search .container .search-area .search .icon-1 {
-    width: 18px;
-  }
-  .obituary-search .container .search-area .search .icon-2 {
-    width: 24px;
-  }
-  .obituary-search .container .search-area .search::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background-color: #303030;
   }
 }
 /* sm */
@@ -1161,7 +1197,6 @@ footer .container .footer_info ul {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
   }
   .obituary-search .container .title1 {
     color: #303030;
@@ -1298,12 +1333,13 @@ footer .container .footer_info ul {
     font-size: 26px;
   }
   .main-bottom .container .contant_list .notice .board_list ul {
-    margin-top: px;
+    margin-top: 12px;
   }
   .main-bottom .container .contant_list .notice .board_list ul li {
     border-top: 1px solid #dfe0e2;
     padding: 16px 0;
     line-height: 24px;
+    font-size: 14px;
   }
   .main-bottom .container .contant_list .notice .board_list ul li p {
     font-size: 14px;
@@ -1324,10 +1360,11 @@ footer .container .footer_info ul {
     border-top: 1px solid #dfe0e2;
     padding: 16px 0;
     line-height: 24px;
+    font-size: 14px;
   }
   footer {
     background-color: #2c2c2c;
-    padding: 32px;
+    padding: 48px 32px;
   }
   footer .container .footer_logo {
     margin-bottom: 24px;
@@ -1359,15 +1396,35 @@ footer .container .footer_info ul {
   footer .container .footer_flex .footer__copylight .cs_wrap {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 6px;
+    -moz-column-gap: 18px;
+         column-gap: 18px;
     margin-bottom: 12px;
   }
   footer .container .footer_flex .footer__copylight .cs_wrap li {
-    color: #fff;
+    color: #cecece;
+    position: relative;
+    line-height: 24px;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap li::after {
+    display: none;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap li:first-child::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 14px;
+    background-color: #cecece;
+    right: -10px;
+    top: 5px;
   }
   footer .container .footer_info ul {
     display: flex;
-    -moz-column-gap: 12px;
-         column-gap: 12px;
+    -moz-column-gap: 18px;
+         column-gap: 18px;
+    margin-bottom: 24px;
+  }
+  footer .container .footer_info ul li .bold {
+    color: #cecece;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -52,6 +52,22 @@ function addFaqlist() {
     }
 }
 
+function openDropmenu() {
+    let mo_open_btn = document.getElementById("mo_gnb_btn");
+    let mo_gnb_menu = document.querySelector(".gnb");
+    let body = document.body;
+
+    mo_open_btn.addEventListener("click", function () {
+        mo_gnb_menu.classList.toggle("active");
+        if (mo_gnb_menu.classList.contains("active")) {
+            body.style.overflowY = "hidden"; // 전체 페이지에 오버플로우를 hidden으로 설정
+        } else {
+            body.style.overflowY = "visible"; // 메뉴가 닫힐 때 다시 풀림
+        }
+    });
+}
+
 //init//
 addBoardlist();
 addFaqlist();
+openDropmenu();

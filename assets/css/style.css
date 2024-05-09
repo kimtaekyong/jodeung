@@ -129,6 +129,7 @@ img {
 
 body {
   font-family: "Pretendard", Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -137,6 +138,11 @@ a {
 
 #app {
   width: 100%;
+  overflow-x: hidden;
+}
+
+.mobile {
+  display: none;
 }
 
 /*
@@ -184,25 +190,27 @@ header .container .gnb ul li a::after {
   bottom: -8px;
   transform: translateX(-50%);
 }
-header .container .gnb ul li a:hover {
-  color: #18864a;
+@media (hover: hover) {
+  header .container .gnb ul li a:hover {
+    color: #18864a;
+  }
+  header .container .gnb ul li a:hover::after {
+    width: 100%;
+    transition: all 0.25s;
+  }
 }
-header .container .gnb ul li a:hover::after {
-  width: 100%;
-  transition: all 0.25s;
-}
-header .container .login ul {
+header .login ul {
   display: flex;
   align-items: center;
   -moz-column-gap: 12px;
        column-gap: 12px;
 }
-header .container .login ul li {
+header .login ul li {
   font-size: 15px;
   font-weight: 600;
   position: relative;
 }
-header .container .login ul li:first-child::after {
+header .login ul li:first-child::after {
   content: "";
   width: 2px;
   height: 70%;
@@ -304,7 +312,7 @@ header .container .login ul li:first-child::after {
   width: 100%;
   max-width: 700px;
   height: 38px;
-  padding: 0 20px;
+  padding: 0 14px;
   position: relative;
   display: inline-block;
 }
@@ -524,9 +532,8 @@ header .container .login ul li:first-child::after {
  * --------------------------------------------------------------------
  */
 footer {
-  min-height: 420px;
   background-color: #2c2c2c;
-  padding-top: 80px;
+  padding: 80px 0;
 }
 footer .container {
   width: 100%;
@@ -585,45 +592,782 @@ footer .container .footer_info ul {
     max-width: 100%;
   }
 }
-.container {
-  position: relative;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  background: #ffffff;
-}
-
-.container2 {
-  position: relative;
-  height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  background: #ffffff;
-}
-
 /* xxl */
 @media (max-width: 1399.98px) {
   .container {
     max-width: 100%;
   }
 }
+@media (max-width: 1281px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  header .container {
+    padding: 0 24px;
+    height: 80px;
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .container .gnb {
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    top: 80px;
+    z-index: 1000;
+    height: 100vh;
+    background-color: #fff;
+    padding: 0 24px;
+    transition: right 0.35s;
+  }
+  header .container .gnb.active {
+    right: 0;
+  }
+  header .container .gnb ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    -moz-column-gap: 48px;
+         column-gap: 48px;
+    align-items: self-start;
+  }
+  header .container .gnb ul li {
+    text-align: left;
+    width: 100%;
+    line-height: 42px;
+  }
+  header .container .gnb ul li a {
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    position: relative;
+  }
+  header .container .login ul {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+  header .container .login ul li:first-child::after {
+    display: none;
+  }
+  header .container .login ul li button {
+    background: none;
+  }
+  .visual_slide {
+    margin-left: 24px;
+  }
+  .visual_slide .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .visual_slide .container .title__container {
+    position: relative;
+    top: 44px;
+    z-index: 100;
+  }
+  .visual_slide .swiper_slider {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    background-color: #000;
+    position: relative;
+    top: -60px;
+  }
+  .visual_slide .swiper_slider img {
+    opacity: 0.85;
+  }
+  .visual_slide .swiper_slider .swiper-pagination {
+    bottom: 24px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet {
+    width: 50px;
+    height: 5px;
+    background: transparent;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet-active {
+    width: 50px;
+    background: #fff;
+  }
+  .visual_slide .title1 {
+    color: #303030;
+    font-family: "Pretendard";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 42px;
+  }
+  .visual_slide .title2.title {
+    color: #303030;
+  }
+  .visual_slide .title {
+    color: #fff;
+    font-family: "GowunBatang";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 54px;
+  }
+  .obituary-guide {
+    margin: 60px 0;
+    background-color: #fff;
+    padding: 54px;
+  }
+  .obituary-guide .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #fff;
+    row-gap: 48px;
+  }
+  .obituary-guide .container h4 {
+    font-size: 34px;
+    font-family: "GowunBatang";
+  }
+  .obituary-guide .container .obituary-list ul {
+    display: flex;
+    -moz-column-gap: 78px;
+         column-gap: 78px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    row-gap: 48px;
+  }
+  .obituary-guide .container .obituary-list ul li {
+    width: calc(25% - 10px);
+    display: flex;
+    justify-content: center;
+  }
+  .obituary-guide .container .obituary-list ul li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: none;
+    row-gap: 12px;
+    cursor: pointer;
+  }
+  .obituary-guide .container .obituary-list ul li button .icon-box svg {
+    width: 38px;
+    height: 38px;
+  }
+  .obituary-guide .container .obituary-list ul li button p {
+    font-size: 15px;
+    display: block;
+    font-weight: bold;
+    font-family: "Pretendard";
+    white-space: nowrap;
+  }
+  .main-bottom {
+    margin-bottom: 100px;
+  }
+  .main-bottom .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .main-bottom .container .contant_list {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    padding: 0 24px;
+  }
+  .main-bottom .container .contant_list h4 {
+    font-size: 32px;
+    font-family: "GowunBatang";
+    margin-bottom: 24px;
+    color: #000;
+  }
+  .main-bottom .container .contant_list .bage {
+    background-color: #18864a;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 32px;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .main-bottom .container .contant_list .board_contant {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .main-bottom .container .contant_list .board_contant button {
+    font-size: 15px;
+    font-family: "Pretendard";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+  }
+  .main-bottom .container .contant_list .board_contant button i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-bottom .container .contant_list .online {
+    width: 100%;
+    background: url(/assets/imges/online_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
+    padding: 48px;
+    width: 100%;
+    height: 520px;
+  }
+  .main-bottom .container .contant_list .online .contant h4 {
+    color: #fff;
+  }
+  .main-bottom .container .contant_list .online .contant p {
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 23px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .main-bottom .container .contant_list .online .contant button {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 18px 38px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px;
+    display: flex;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    font-weight: bold;
+    font-family: "Pretendard";
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-bottom .container .contant_list .online .contant button i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-bottom .container .contant_list .notice {
+    width: 100%;
+    background-color: #f2f4f5;
+    padding: 48px;
+  }
+  .main-bottom .container .contant_list .notice h4 {
+    margin-bottom: 0;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul {
+    margin-top: 24px;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul li {
+    border-top: 1px solid #dfe0e2;
+    padding: 20px 0;
+    line-height: 24px;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul li p {
+    font-size: 14px;
+  }
+  .main-bottom .container .contant_list .faq {
+    width: 100%;
+    background-color: #f2f4f5;
+    padding: 48px;
+  }
+  .main-bottom .container .contant_list .faq h4 {
+    margin-bottom: 0;
+  }
+  .main-bottom .container .contant_list .faq .faq_list ul {
+    margin-top: 24px;
+  }
+  .main-bottom .container .contant_list .faq .faq_list ul li {
+    border-top: 1px solid #dfe0e2;
+    padding: 20px 0;
+    line-height: 24px;
+  }
+  footer {
+    background-color: #2c2c2c;
+    padding: 80px;
+  }
+  footer .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  footer .container .footer_flex {
+    display: flex;
+    flex-direction: column;
+    -moz-column-gap: 42px;
+         column-gap: 42px;
+  }
+  footer .container .footer_flex .footer__copylight span {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  footer .container .footer_flex .footer__copylight .info_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    padding: 12px 0;
+  }
+  footer .container .footer_flex .footer__copylight .info_wrap li {
+    line-height: 24px;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap {
+    display: flex;
+    -moz-column-gap: 6px;
+         column-gap: 6px;
+    margin-bottom: 12px;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap li {
+    color: #fff;
+  }
+  footer .container .footer_info ul {
+    display: flex;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+  }
+}
 /* xl */
 /* lg */
 /* md */
-@media (max-width: 769.98px) {
-  .obituary-search .search-area .search {
+@media (max-width: 769px) {
+  .visual_slide {
+    margin-left: 24px;
+  }
+  .visual_slide .container .title__container {
+    position: relative;
+    top: 24px;
+    z-index: 100;
+  }
+  .visual_slide .swiper_slider {
+    top: -50px;
+  }
+  .visual_slide .swiper_slider img {
+    opacity: 0.85;
+    height: 320px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet {
+    width: 34px;
+    height: 4px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet-active {
+    width: 34px;
+  }
+  .visual_slide .title1 {
+    color: #303030;
+    font-family: "Pretendard";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .visual_slide .title {
+    color: #fff;
+    font-family: "GowunBatang";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  .obituary-search {
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
   }
-  .obituary-search .search-area .search .input input {
-    font-size: 14px;
-    font-weight: 500;
+  .obituary-search .container .title1 {
+    color: #303030;
+    text-align: center;
+    font-family: "GowunBatang";
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
   }
-  .obituary-search .search-area .search .icon-1 {
-    width: 14px;
+  .obituary-search .container .search-area {
+    margin-top: 25px;
+    text-align: center;
   }
-  .obituary-search .search-area .search .icon-2 {
+  .obituary-search .container .search-area .search {
+    width: 100%;
+    max-width: 700px;
+    height: 38px;
+    padding: 0 20px;
+    position: relative;
+    display: inline-block;
+  }
+  .obituary-search .container .search-area .search div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .obituary-search .container .search-area .search .icon-1 {
+    width: 18px;
+  }
+  .obituary-search .container .search-area .search .icon-2 {
     width: 24px;
+  }
+  .obituary-search .container .search-area .search::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #303030;
   }
 }
 /* sm */
-/* iphone SE *//*# sourceMappingURL=style.css.map */
+/* iphone SE */
+@media (min-width: 375px) and (max-width: 575px) {
+  .visual_slide {
+    margin-left: 24px;
+  }
+  .visual_slide .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .visual_slide .container .title__container {
+    position: relative;
+    top: 24px;
+    z-index: 100;
+  }
+  .visual_slide .swiper_slider {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    background-color: #000;
+    position: relative;
+    top: -50px;
+  }
+  .visual_slide .swiper_slider img {
+    opacity: 0.85;
+    height: 320px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination {
+    bottom: 24px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet {
+    width: 50px;
+    height: 5px;
+    background: transparent;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet-active {
+    width: 50px;
+    background: #fff;
+  }
+  .visual_slide .title1 {
+    color: #303030;
+    font-family: "Pretendard";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .visual_slide .title2.title {
+    color: #303030;
+  }
+  .visual_slide .title {
+    color: #fff;
+    font-family: "GowunBatang";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+}
+/* iphone SE */
+@media (min-width: 375px) and (max-width: 575px) {
+  .visual_slide {
+    margin-left: 24px;
+  }
+  .visual_slide .container .title__container {
+    position: relative;
+    top: 24px;
+    z-index: 100;
+  }
+  .visual_slide .swiper_slider {
+    top: -50px;
+  }
+  .visual_slide .swiper_slider img {
+    opacity: 0.85;
+    height: 320px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet {
+    width: 34px;
+    height: 4px;
+  }
+  .visual_slide .swiper_slider .swiper-pagination-bullet-active {
+    width: 34px;
+  }
+  .visual_slide .title1 {
+    color: #303030;
+    font-family: "Pretendard";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .visual_slide .title {
+    color: #fff;
+    font-family: "GowunBatang";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  .obituary-search {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .obituary-search .container .title1 {
+    color: #303030;
+    text-align: center;
+    font-family: "GowunBatang";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 70px;
+  }
+  .obituary-search .container .search-area {
+    margin-top: 25px;
+    text-align: center;
+  }
+  .obituary-search .container .search-area .search {
+    width: 100%;
+    max-width: 700px;
+    height: 38px;
+    padding: 0 14px;
+    position: relative;
+    display: inline-block;
+  }
+  .obituary-search .container .search-area .search .search-input input {
+    min-width: 240px;
+    font-size: 14px;
+  }
+  .obituary-guide .container h4 {
+    font-size: 24px;
+    font-family: "GowunBatang";
+  }
+  .obituary-guide .container .obituary-list ul li {
+    width: calc(50% - 24px);
+  }
+  .main-bottom {
+    margin-bottom: 100px;
+  }
+  .main-bottom .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .main-bottom .container .contant_list {
+    display: flex;
+    row-gap: 20px;
+    flex-direction: column;
+    padding: 0 24px;
+  }
+  .main-bottom .container .contant_list h4 {
+    font-size: 32px;
+    font-family: "GowunBatang";
+    margin-bottom: 24px;
+    color: #000;
+  }
+  .main-bottom .container .contant_list .bage {
+    background-color: #18864a;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 32px;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .main-bottom .container .contant_list .board_contant {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  .main-bottom .container .contant_list .board_contant button {
+    font-size: 15px;
+    font-family: "Pretendard";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+  }
+  .main-bottom .container .contant_list .board_contant button i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-bottom .container .contant_list .online {
+    width: 100%;
+    background: url(/assets/imges/online_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
+    padding: 32px;
+    width: 100%;
+    height: 520px;
+  }
+  .main-bottom .container .contant_list .online .contant h4 {
+    color: #fff;
+    font-size: 26px;
+  }
+  .main-bottom .container .contant_list .online .contant p {
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 23px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .main-bottom .container .contant_list .online .contant button {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 18px 38px;
+    border: none;
+    border-radius: 32px;
+    font-size: 16px;
+    display: flex;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    font-weight: bold;
+    font-family: "Pretendard";
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-bottom .container .contant_list .online .contant button i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-bottom .container .contant_list .notice {
+    width: 100%;
+    background-color: #f2f4f5;
+    padding: 32px;
+  }
+  .main-bottom .container .contant_list .notice h4 {
+    margin-bottom: 0;
+    font-size: 26px;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul {
+    margin-top: px;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul li {
+    border-top: 1px solid #dfe0e2;
+    padding: 16px 0;
+    line-height: 24px;
+  }
+  .main-bottom .container .contant_list .notice .board_list ul li p {
+    font-size: 14px;
+  }
+  .main-bottom .container .contant_list .faq {
+    width: 100%;
+    background-color: #f2f4f5;
+    padding: 32px;
+  }
+  .main-bottom .container .contant_list .faq h4 {
+    margin-bottom: 0;
+    font-size: 26px;
+  }
+  .main-bottom .container .contant_list .faq .faq_list ul {
+    margin-top: 24px;
+  }
+  .main-bottom .container .contant_list .faq .faq_list ul li {
+    border-top: 1px solid #dfe0e2;
+    padding: 16px 0;
+    line-height: 24px;
+  }
+  footer {
+    background-color: #2c2c2c;
+    padding: 32px;
+  }
+  footer .container .footer_logo {
+    margin-bottom: 24px;
+  }
+  footer .container .footer_flex {
+    display: flex;
+    flex-direction: column;
+    -moz-column-gap: 42px;
+         column-gap: 42px;
+  }
+  footer .container .footer_flex .footer__copylight span {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: none;
+  }
+  footer .container .footer_flex .footer__copylight .info_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 500px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+    padding: 6px 0;
+  }
+  footer .container .footer_flex .footer__copylight .info_wrap li {
+    line-height: 24px;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 6px;
+    margin-bottom: 12px;
+  }
+  footer .container .footer_flex .footer__copylight .cs_wrap li {
+    color: #fff;
+  }
+  footer .container .footer_info ul {
+    display: flex;
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+  }
+}/*# sourceMappingURL=style.css.map */

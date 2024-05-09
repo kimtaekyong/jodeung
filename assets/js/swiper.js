@@ -3,7 +3,7 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
     },
     centeredSlides: true,
-    loop: true, // 무한 반복
+    loop: true,
     autoplay: {
         delay: 2500,
     },

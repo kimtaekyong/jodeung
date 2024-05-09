@@ -3,6 +3,7 @@
 
 body {
     font-family: c.$fonts;
+    overflow-x: hidden;
 }
 
 a {
@@ -11,6 +12,11 @@ a {
 
 #app {
     width: 100%;
+    overflow-x: hidden;
+}
+
+.mobile {
+    display: none;
 }
 
 /*
@@ -50,36 +56,38 @@ header {
                             bottom: -8px;
                             transform: translateX(-50%);
                         }
-                        &:hover {
-                            color: c.$ST_color;
-                            &::after {
-                                width: 100%;
-                                transition: all 0.25s;
+                        @media (hover: hover) {
+                            &:hover {
+                                color: c.$ST_color;
+                                &::after {
+                                    width: 100%;
+                                    transition: all 0.25s;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-        .login {
-            ul {
-                @include c.flex;
-                column-gap: 12px;
-                li {
-                    font-size: 15px;
-                    font-weight: 600;
-                    position: relative;
-                    &:first-child {
-                        &::after {
-                            content: "";
-                            width: 2px;
-                            height: 70%;
-                            background-color: c.$sec_color;
-                            display: block;
-                            position: absolute;
-                            right: -7px;
-                            top: 3px;
-                        }
+    }
+    .login {
+        ul {
+            @include c.flex;
+            column-gap: 12px;
+            li {
+                font-size: 15px;
+                font-weight: 600;
+                position: relative;
+                &:first-child {
+                    &::after {
+                        content: "";
+                        width: 2px;
+                        height: 70%;
+                        background-color: c.$sec_color;
+                        display: block;
+                        position: absolute;
+                        right: -7px;
+                        top: 3px;
                     }
                 }
             }
@@ -168,7 +176,6 @@ header {
             font-weight: 400;
             line-height: 70px;
         }
-
         .search-area {
             margin-top: 25px;
             text-align: center;
@@ -176,7 +183,7 @@ header {
                 width: 100%;
                 max-width: 700px;
                 height: 38px;
-                padding: 0 20px;
+                padding: 0 14px;
                 position: relative;
                 display: inline-block;
                 div {
@@ -395,9 +402,8 @@ header {
  * --------------------------------------------------------------------
  */
 footer {
-    min-height: 420px;
     background-color: #2c2c2c;
-    padding-top: 80px;
+    padding: 80px 0;
     .container {
         @include c.inner_layout;
         background: none;
@@ -461,25 +467,10 @@ footer {
 @media (min-width: 992px) {
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
 }
 
 @media (min-width: 1400px) {
-}
-
-.container {
-    position: relative;
-    height: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    background: #ffffff;
-}
-.container2 {
-    position: relative;
-    height: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    background: #ffffff;
 }
 
 /* xxl */
@@ -490,7 +481,358 @@ footer {
 }
 
 @media (max-width: 1281px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
     header {
+        .container {
+            padding: 0 24px;
+            height: 80px;
+            position: relative;
+            @include c.inner_layout;
+            @include c.flex-between;
+            .logo {
+            }
+            .gnb {
+                position: absolute;
+                right: -100%;
+                width: 100%;
+                top: 80px;
+                z-index: 1000;
+                height: 100vh;
+                background-color: #fff;
+                padding: 0 24px;
+                transition: right 0.35s;
+                &.active {
+                    right: 0;
+                }
+                ul {
+                    @include c.flex;
+                    flex-direction: column;
+                    column-gap: 48px;
+                    align-items: self-start;
+
+                    li {
+                        text-align: left;
+                        width: 100%;
+                        line-height: 42px;
+                        a {
+                            font-size: 15px;
+                            font-weight: 600;
+                            display: block;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+            .login {
+                ul {
+                    @include c.flex;
+                    column-gap: 0;
+                    li {
+                        &:first-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        button {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .visual_slide {
+        margin-left: 24px;
+        .container {
+            @include c.inner_layout;
+            padding: 0 24px;
+            .title__container {
+                position: relative;
+                top: 44px;
+                z-index: 100;
+            }
+        }
+        .swiper_slider {
+            width: 100%;
+            max-width: 1480px;
+            margin: 0 auto;
+            background-color: #000;
+            position: relative;
+            top: -60px;
+            img {
+                opacity: 0.85;
+            }
+            .swiper-pagination {
+                bottom: 24px;
+            }
+            .swiper-pagination-bullet {
+                width: 50px;
+                height: 5px;
+                background: transparent;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 0;
+            }
+            .swiper-pagination-bullet-active {
+                width: 50px;
+                background: #fff;
+            }
+        }
+
+        .title1 {
+            color: c.$df_color;
+            font-family: c.$title1;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            margin-bottom: 42px;
+        }
+        .title2.title {
+            color: c.$df_color;
+        }
+        .title {
+            color: #fff;
+            font-family: c.$title2;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 54px;
+        }
+    }
+    .obituary-guide {
+        margin: 60px 0;
+        background-color: #fff;
+        padding: 54px;
+        .container {
+            @include c.inner_layout;
+            @include c.flex-between;
+            flex-direction: column;
+            background-color: #fff;
+            row-gap: 48px;
+            h4 {
+                font-size: 34px;
+                font-family: c.$title2;
+            }
+            .obituary-list {
+                ul {
+                    display: flex;
+                    column-gap: 78px;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    gap: 24px;
+                    row-gap: 48px;
+                    li {
+                        width: calc(25% - 10px);
+                        display: flex;
+                        justify-content: center;
+                        button {
+                            @include c.flex-center;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            background: none;
+                            row-gap: 12px;
+                            cursor: pointer;
+                            .icon-box {
+                                svg {
+                                    width: 38px;
+                                    height: 38px;
+                                }
+                            }
+                            p {
+                                font-size: 15px;
+                                display: block;
+                                font-weight: bold;
+                                font-family: c.$title1;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-bottom {
+        margin-bottom: 100px;
+        .container {
+            @include c.inner_layout;
+            .contant_list {
+                display: flex;
+                row-gap: 20px;
+                flex-direction: column;
+                padding: 0 24px;
+                h4 {
+                    font-size: 32px;
+                    font-family: c.$title2;
+                    margin-bottom: 24px;
+                    color: #000;
+                }
+                .bage {
+                    background-color: c.$ST_color;
+                    display: inline-block;
+                    padding: 6px 14px;
+                    border-radius: 32px;
+                    color: #fff;
+                    margin-bottom: 14px;
+                }
+                .board_contant {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+                    button {
+                        font-size: 15px;
+                        font-family: c.$title1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: none;
+                        border: none;
+                        i {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+                .online {
+                    width: 100%;
+                    background: url(/assets/imges/online_bg.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    object-fit: fill;
+                    padding: 48px;
+                    width: 100%;
+                    height: 520px;
+                    .contant {
+                        h4 {
+                            color: #fff;
+                        }
+                        p {
+                            color: #fff;
+                            margin-bottom: 32px;
+                            line-height: 23px;
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+                        button {
+                            background: #fff;
+                            color: #000;
+                            border: none;
+                            padding: 18px 38px;
+                            border: none;
+                            border-radius: 32px;
+                            font-size: 16px;
+                            display: flex;
+                            column-gap: 16px;
+                            font-weight: bold;
+                            font-family: c.$title1;
+                            cursor: pointer;
+                            @include c.flex-center;
+                            i {
+                                @include c.flex-center;
+                            }
+                        }
+                    }
+                }
+                .notice {
+                    width: 100%;
+                    background-color: #f2f4f5;
+                    padding: 48px;
+
+                    h4 {
+                        margin-bottom: 0;
+                    }
+                    .board_list {
+                        ul {
+                            margin-top: 24px;
+                            li {
+                                border-top: 1px solid #dfe0e2;
+                                padding: 20px 0;
+                                line-height: 24px;
+                                p {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .faq {
+                    width: 100%;
+                    background-color: #f2f4f5;
+                    padding: 48px;
+                    h4 {
+                        margin-bottom: 0;
+                    }
+                    .faq_list {
+                        ul {
+                            margin-top: 24px;
+                            li {
+                                border-top: 1px solid #dfe0e2;
+                                padding: 20px 0;
+                                line-height: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: #2c2c2c;
+        padding: 80px;
+        .container {
+            @include c.inner_layout;
+            background: none;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .footer_flex {
+                display: flex;
+                flex-direction: column;
+                column-gap: 42px;
+                .footer__copylight {
+                    span {
+                        font-weight: bold;
+                        font-size: 18px;
+                        margin-bottom: 12px;
+                        display: block;
+                    }
+                    .info_wrap {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        max-width: 500px;
+                        column-gap: 8px;
+                        padding: 12px 0;
+                        li {
+                            line-height: 24px;
+                        }
+                    }
+                    .cs_wrap {
+                        display: flex;
+                        column-gap: 6px;
+                        margin-bottom: 12px;
+                        li {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .footer_info {
+                ul {
+                    display: flex;
+                    column-gap: 12px;
+                }
+            }
+        }
     }
 }
 
@@ -504,33 +846,440 @@ footer {
 }
 
 /* lg */
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
 }
 
 /* md */
-@media (max-width: 769.98px) {
-    .obituary-search .search-area .search {
-        width: 100%;
-
-        .input input {
-            font-size: 14px;
-            font-weight: 500;
+@media (max-width: 769px) {
+    .visual_slide {
+        margin-left: 24px;
+        .container {
+            .title__container {
+                position: relative;
+                top: 24px;
+                z-index: 100;
+            }
         }
-
-        .icon-1 {
-            width: 14px;
+        .swiper_slider {
+            top: -50px;
+            img {
+                opacity: 0.85;
+                height: 320px;
+            }
+            .swiper-pagination-bullet {
+                width: 34px;
+                height: 4px;
+            }
+            .swiper-pagination-bullet-active {
+                width: 34px;
+            }
         }
+        .title1 {
+            color: c.$df_color;
+            font-family: c.$title1;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .title {
+            color: #fff;
+            font-family: c.$title2;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px;
+        }
+    }
+    .obituary-search {
+        @include c.inner_layout;
+        .container {
+            .title1 {
+                color: c.$df_color;
+                text-align: center;
+                font-family: "GowunBatang";
+                font-size: 34px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 70px;
+            }
 
-        .icon-2 {
-            width: 24px;
+            .search-area {
+                margin-top: 25px;
+                text-align: center;
+                .search {
+                    width: 100%;
+                    max-width: 700px;
+                    height: 38px;
+                    padding: 0 20px;
+                    position: relative;
+                    display: inline-block;
+                    div {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .icon-1 {
+                        width: 18px;
+                    }
+                    .icon-2 {
+                        width: 24px;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 2px;
+                        width: 100%;
+                        background-color: c.$df_color;
+                    }
+                }
+            }
         }
     }
 }
 
 /* sm */
-@media (max-width: 575.98px) {
+@media (max-width: 575px) {
 }
 
 /* iphone SE */
-@media (max-width: 375.98px) {
+@media (min-width: 375px) and (max-width: 575px) {
+    .visual_slide {
+        margin-left: 24px;
+        .container {
+            @include c.inner_layout;
+            padding: 0 24px;
+            .title__container {
+                position: relative;
+                top: 24px;
+                z-index: 100;
+            }
+        }
+        .swiper_slider {
+            width: 100%;
+            max-width: 1480px;
+            margin: 0 auto;
+            background-color: #000;
+            position: relative;
+            top: -50px;
+            img {
+                opacity: 0.85;
+                height: 320px;
+            }
+            .swiper-pagination {
+                bottom: 24px;
+            }
+            .swiper-pagination-bullet {
+                width: 50px;
+                height: 5px;
+                background: transparent;
+                background: rgba(255, 255, 255, 0.35);
+                border-radius: 0;
+            }
+            .swiper-pagination-bullet-active {
+                width: 50px;
+                background: #fff;
+            }
+        }
+
+        .title1 {
+            color: c.$df_color;
+            font-family: c.$title1;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .title2.title {
+            color: c.$df_color;
+        }
+        .title {
+            color: #fff;
+            font-family: c.$title2;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px;
+        }
+    }
+}
+
+/* iphone SE */
+@media (min-width: 375px) and (max-width: 575px) {
+    .visual_slide {
+        margin-left: 24px;
+        .container {
+            .title__container {
+                position: relative;
+                top: 24px;
+                z-index: 100;
+            }
+        }
+        .swiper_slider {
+            top: -50px;
+            img {
+                opacity: 0.85;
+                height: 320px;
+            }
+            .swiper-pagination-bullet {
+                width: 34px;
+                height: 4px;
+            }
+            .swiper-pagination-bullet-active {
+                width: 34px;
+            }
+        }
+        .title1 {
+            color: c.$df_color;
+            font-family: c.$title1;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .title {
+            color: #fff;
+            font-family: c.$title2;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px;
+        }
+    }
+    .obituary-search {
+        @include c.inner_layout;
+        padding: 0 24px;
+        .container {
+            .title1 {
+                color: c.$df_color;
+                text-align: center;
+                font-family: "GowunBatang";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 70px;
+            }
+            .search-area {
+                margin-top: 25px;
+                text-align: center;
+                .search {
+                    width: 100%;
+                    max-width: 700px;
+                    height: 38px;
+                    padding: 0 14px;
+                    position: relative;
+                    display: inline-block;
+                    .search-input {
+                        input {
+                            min-width: 240px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .obituary-guide {
+        .container {
+            h4 {
+                font-size: 24px;
+                font-family: c.$title2;
+            }
+            .obituary-list {
+                ul {
+                    li {
+                        width: calc(50% - 24px);
+                    }
+                }
+            }
+        }
+    }
+    .main-bottom {
+        margin-bottom: 100px;
+        .container {
+            @include c.inner_layout;
+            .contant_list {
+                display: flex;
+                row-gap: 20px;
+                flex-direction: column;
+                padding: 0 24px;
+                h4 {
+                    font-size: 32px;
+                    font-family: c.$title2;
+                    margin-bottom: 24px;
+                    color: #000;
+                }
+                .bage {
+                    background-color: c.$ST_color;
+                    display: inline-block;
+                    padding: 6px 14px;
+                    border-radius: 32px;
+                    color: #fff;
+                    margin-bottom: 14px;
+                }
+                .board_contant {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+                    button {
+                        font-size: 15px;
+                        font-family: c.$title1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: none;
+                        border: none;
+                        i {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+                .online {
+                    width: 100%;
+                    background: url(/assets/imges/online_bg.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    object-fit: fill;
+                    padding: 32px;
+                    width: 100%;
+                    height: 520px;
+                    .contant {
+                        h4 {
+                            color: #fff;
+                            font-size: 26px;
+                        }
+                        p {
+                            color: #fff;
+                            margin-bottom: 32px;
+                            line-height: 23px;
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+                        button {
+                            background: #fff;
+                            color: #000;
+                            border: none;
+                            padding: 18px 38px;
+                            border: none;
+                            border-radius: 32px;
+                            font-size: 16px;
+                            display: flex;
+                            column-gap: 16px;
+                            font-weight: bold;
+                            font-family: c.$title1;
+                            cursor: pointer;
+                            @include c.flex-center;
+                            i {
+                                @include c.flex-center;
+                            }
+                        }
+                    }
+                }
+                .notice {
+                    width: 100%;
+                    background-color: #f2f4f5;
+                    padding: 32px;
+
+                    h4 {
+                        margin-bottom: 0;
+                        font-size: 26px;
+                    }
+                    .board_list {
+                        ul {
+                            margin-top: px;
+                            li {
+                                border-top: 1px solid #dfe0e2;
+                                padding: 16px 0;
+                                line-height: 24px;
+                                p {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .faq {
+                    width: 100%;
+                    background-color: #f2f4f5;
+                    padding: 32px;
+                    h4 {
+                        margin-bottom: 0;
+                        font-size: 26px;
+                    }
+                    .faq_list {
+                        ul {
+                            margin-top: 24px;
+                            li {
+                                border-top: 1px solid #dfe0e2;
+                                padding: 16px 0;
+                                line-height: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: #2c2c2c;
+        padding: 32px;
+        .container {
+            .footer_logo {
+                margin-bottom: 24px;
+            }
+            .footer_flex {
+                display: flex;
+                flex-direction: column;
+                column-gap: 42px;
+                .footer__copylight {
+                    span {
+                        font-weight: bold;
+                        font-size: 18px;
+                        margin-bottom: 12px;
+                        display: none;
+                    }
+                    .info_wrap {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        max-width: 500px;
+                        column-gap: 8px;
+                        padding: 6px 0;
+                        li {
+                            line-height: 24px;
+                        }
+                    }
+                    .cs_wrap {
+                        display: flex;
+                        flex-wrap: wrap;
+                        row-gap: 6px;
+                        margin-bottom: 12px;
+                        li {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .footer_info {
+                ul {
+                    display: flex;
+                    column-gap: 12px;
+                }
+            }
+        }
+    }
 }

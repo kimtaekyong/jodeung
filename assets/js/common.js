@@ -26,7 +26,6 @@ function addBoardlist() {
         addTextToList(texts[i], day[i]);
     }
 }
-
 //<!-- FAQ 더미 텍스트 -->
 function addFaqlist() {
     // 배열에 들어갈 텍스트들
@@ -51,7 +50,7 @@ function addFaqlist() {
         addTextToList(texts[i]);
     }
 }
-
+//모바일 클릭 시 GNB 영역 버튼 이벤트
 function openDropmenu() {
     let mo_open_btn = document.getElementById("mo_gnb_btn");
     let mo_gnb_menu = document.querySelector(".gnb");

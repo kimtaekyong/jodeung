@@ -907,7 +907,7 @@ footer .container .footer_info ul li .bold {
   }
   .main-bottom .container .contant_list .online {
     width: 100%;
-    background: url(/assets/imges/online_bg.png);
+    background: url(assets/imges/online_bg.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

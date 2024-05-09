@@ -318,7 +318,7 @@ header {
             }
             .online {
                 width: 33.333%;
-                background: url(/assets/imges/online_bg.png);
+                background: url(./assets/imges/online_bg.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
@@ -1184,7 +1184,6 @@ footer {
                 }
                 .online {
                     width: 100%;
-                    background: url(/assets/imges/online_bg.png);
                     background-repeat: no-repeat;
                     background-position: center center;
                     background-size: cover;
@@ -1250,8 +1249,9 @@ footer {
                 }
                 .faq {
                     width: 100%;
-                    background-color: #f2f4f5;
+                    background-color: #fff;
                     padding: 32px;
+                    border: 1px solid #eee;
                     h4 {
                         margin-bottom: 0;
                         font-size: 26px;
